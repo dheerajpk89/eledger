@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!-- Favicon -->
+<link th:href="@{/img/brand/images.png}" rel="icon" type="image/png" />
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+	rel="stylesheet" />
+<!-- Icons -->
+<link th:href="@{/vendor/nucleo/css/nucleo.css}" rel="stylesheet" />
+<link th:href="@{/vendor/@fortawesome/fontawesome-free/css/all.min.css}"
+	rel="stylesheet" />
+<!--  CSS -->
+<link type="text/css" th:href="@{/css/argon.css?v=1.0.0}"
+	rel="stylesheet" />
+
+</head>
+<body>
+	<th:block th:replace="fragments/header :: header" />
+	<th:block layout:fragment="content" />
+	
+
+	<script th:src="@{/js/postrequest.js}"></script>
+	<script th:src="@{/js/getrequest.js}"></script>
+	<script th:src="@{/vendor/jquery/dist/jquery.min.js}"></script>
+	<script th:src="@{/vendor/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/js/eledger.js}"> </script>
+	<!-- Argon JS -->
+	<script th:src="@{/js/argon.js?v=1.0.0}"></script>
+</body>
+</html>

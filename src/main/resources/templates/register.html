@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+     xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  
+  <title>Register</title>
+  <!-- Favicon -->
+  <link th:href="@{/img/brand/images.png}" rel="icon" type="image/png" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Icons -->
+  <link th:href="@{/vendor/nucleo/css/nucleo.css}" rel="stylesheet" />
+  <link th:href="@{/vendor/@fortawesome/fontawesome-free/css/all.min.css}" rel="stylesheet" />
+  <!-- Argon CSS -->
+  <link type="text/css" th:href="@{/css/argon.css?v=1.0.0}" rel="stylesheet" />
+</head>
+
+<body class="bg-default">
+  <div class="main-content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
+      <div class="container px-4">
+        <a class="navbar-brand" href="../index.html">
+          <img th:src="@{/img/brand/icon-pill.png}" class="navbar-brand-img" alt="..." style="width=10px">  eledger
+		 
+        </a>
+        
+        
+      </div>
+    </nav>
+    <!-- Header -->
+    <div class="header bg-gradient-primary py-7 py-lg-4">
+      <div class="container">
+        <div class="header-body text-center mb-7">
+          <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6">
+              <h1 class="text-white">Welcome!</h1>
+              <p class="text-lead text-light">Register new account</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container mt--8 pb-5">
+      <!-- Table -->
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="card bg-secondary shadow border-0">
+            
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                <small>Doctor / Lab Registration with credentials</small>
+              </div>
+              <form role="form">
+			  <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <select name="asia" class="form-control" id="registration_type">
+					<option value="0">---Select---</option>
+						<option value="DoctorRegistration">Doctor Registration</option>
+						<option value="LabRegistration">Lab Registration</option>
+					</select>
+                  </div>
+                </div>
+				<div class="optionDoctorform" style="display:none">
+				<div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="First Name and Last Name" type="text">
+                  </div>
+                </div>
+				<div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Doctor License ID" type="text">
+                  </div>
+                </div>
+				<div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Specialty (O)" type="text">
+                  </div>
+                </div>
+				<div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Contact Number (O)" type="text">
+                  </div>
+                </div>
+				</div>
+				<div class="optionLabform" style="display:none">
+				<div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Name of the Lab Services Company" type="text">
+                  </div>
+                </div>
+				<div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Laboratory License Number " type="text">
+                  </div>
+                </div>
+				</div>
+                
+				<div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Address (O)" type="text">
+                  </div>
+                </div>
+				 <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Country (M)" type="text">
+                  </div>
+                </div>
+				<div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Province(M)" type="text">
+                  </div>
+                </div>
+				
+                <div class="form-group">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Password" type="password">
+                  </div>
+                </div>
+			
+                <!--<div class="text-muted font-italic"><small>password strength: <span class="text-success font-weight-700">strong</span></small></div>
+                <div class="row my-4">
+                  <div class="col-12">
+                    <div class="custom-control custom-control-alternative custom-checkbox">
+                      <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                      <label class="custom-control-label" for="customCheckRegister">
+                        <span class="text-muted">I agree with the <a href="#!">Privacy Policy</a></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>-->
+                <div class="text-center">
+                  <button type="button" class="btn btn-primary mt-4">Create account</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-6">
+             <!--  <a href="#" class="text-light"><small>Forgot password?</small></a> -->
+            </div>
+            <div class="col-6 text-right">
+              <a th:href="@{/}" class="text-light"><small>Log In</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-xl-between">
+        <div class="col-xl-6">
+          <div class="copyright text-center text-xl-left text-muted">
+            &copy; 2018 <a href="#" class="font-weight-bold ml-1" target="_blank">eledger</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+  
+  
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  <script th:src="@{vendor/jquery/dist/jquery.min.js}"></script>
+  <script th:src="@{/vendor/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+  <!-- Argon JS -->
+  <script th:src="@{/js/argon.js?v=1.0.0}"></script>
+  <script th:src="@{/js/eledger.js}"> </script>
+         
+</body>
+
+</html>

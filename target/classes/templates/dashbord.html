@@ -1,0 +1,225 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{fragments/layout}">
+<head>
+<title>Dashbord</title>
+</head>
+
+<body>
+	<div layout:fragment="content" th:remove="tag">
+		<!-- Main content -->
+		<div class="main-content">
+			<th:block th:replace="fragments/topnav :: topnav" />
+			<!-- Header -->
+			<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+				<div class="container-fluid">
+					<div class="header-body">
+						<!-- Card stats -->
+						<div class="row">
+
+							<!-- <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Content</h5>
+                      
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Page content -->
+			<div class="container-fluid mt--7">
+
+				<div class="row mt-5">
+					<div class="col-xl-12 mb-5 mb-xl-0">
+						<div class="card shadow">
+							<div class="card-header border-0">
+								<div class="row align-items-center">
+									<div class="col">
+										<h3 class="mb-0">Today's Visits</h3>
+									</div>
+									<div class="col text-right"></div>
+								</div>
+							</div>
+							<div class="table-responsive">
+								<!-- Projects table -->
+								<table class="table align-items-center table-flush"
+									id="table_id">
+									<thead class="thead-light">
+										<tr>
+											<th scope="col">Patient ID</th>
+											<th scope="col">Patient Name</th>
+											<th scope="col">Doctor In Charge</th>
+											<th scope="col">Patient Phone</th>
+											<th scope="col">Patient Email</th>
+											<th scope="col">Patient Address</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td style="display: none">10606</td>
+											<td>
+												<h2>
+													<a class="badge badge-info" href="" data-toggle="modal"
+														data-target="#exampleModal" onclick="loadDataToModel()">
+														10606 </a>
+												</h2>
+											</td>
+											<th scope="row">Leonard Hofstadter</th>
+											<th scope="row">Dr Randy</th>
+											<td>976546788656</td>
+											<td>abc@corp.com</td>
+											<td>819 Brandywine MD 20874</td>
+										</tr>
+										<tr>
+											<td style="display: none">10607</td>
+											<td>
+												<h2>
+													<a class="badge badge-info" href="" data-toggle="modal"
+														data-target="#exampleModal" onclick="loadDataToModel()">
+														10607 </a>
+												</h2>
+											</td>
+											<th scope="row">Penny</th>
+											<th scope="row">Dr Sean</th>
+											<td>6776776678</td>
+											<td>def@corp.com</td>
+											<td>715 St. Germantown,UA 20874</td>
+										</tr>
+										<tr>
+											<td style="display: none">10608</td>
+											<td>
+												<h2>
+													<a class="badge badge-info" href="" data-toggle="modal"
+														data-target="#exampleModal" onclick="loadDataToModel()">
+														10608 </a>
+												</h2>
+											</td>
+											<th scope="row">Rajesh</th>
+											<th scope="row">Dr Sheldon Cooper</th>
+											<td>456678997665</td>
+											<td>def@corp.com</td>
+											<td>715 Lalbag, CA 20874</td>
+										</tr>
+										<tr>
+											<td style="display: none">10609</td>
+											<td>
+												<h2>
+													<a class="badge badge-info" href="" data-toggle="modal"
+														data-target="#exampleModal" onclick="loadDataToModel()">
+														10609 </a>
+												</h2>
+											</td>
+											<th scope="row">Howard Wolowitz</th>
+											<th scope="row">Dr Wolowitz</th>
+											<td>456678997665</td>
+											<td>def@corp.com</td>
+											<td>715 Lalbag, CA 20874</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<th:block th:replace="fragments/footer :: footer" />
+			</div>
+		</div>
+
+		<!-- Button trigger modal -->
+		<!-- Modal -->
+		<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal- modal-dialog-centered modal-lg"
+				role="document">
+				<div class="modal-content bg-gradient">
+					<div class="modal-header">
+						<div class="modal-title" style="width: 100rem;">
+							<div class="card card-stats mb-0 mb-lg-0">
+								<div class="card-body">
+									<div class="row">
+										<div class="col">
+											<span class=" h3 font-weight-bold mb-6">Patient
+												Information</span><br /> <span class="h4 font-weight-bold mb-6">Patient
+												Name: <output id="patient_name"></output>
+											</span>
+											<h5 class="card-title text-uppercase text-muted mb-0">
+												Patient ID:
+												<output id="patient_id"></output>
+											</h5>
+											<h5 class="card-title  text-muted mb-0">
+												Dr.in Charge :
+												<output id="dr_in_charge"></output>
+											</h5>
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table class="table" id="table__inner_id">
+								<thead class="thead-light">
+									<tr>
+										<th scope="col">Date</th>
+										<th scope="col">About Patient Symptomps</th>
+										<th scope="col">BP,Temp</th>
+										<th scope="col">Assessment</th>
+										<th scope="col">Planing</th>
+										<th scope="col">Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="text" value="20/07/2018"></td>
+										<td><input type="text"></td>
+										<td><input type="text"></td>
+										<td><input type="text"></td>
+										<td><input type="text"></td>
+										<td>
+											<button type="button" class="btn btn-primary btn-sm">Save
+												changes</button>
+										</td>
+									</tr>
+									<tr>
+										<td><input type="text" value="20/07/2018"></td>
+										<td><input type="text"></td>
+										<td><input type="text"></td>
+										<td><input type="text"></td>
+										<td><input type="text"></td>
+										<td>
+											<button type="button" class="btn btn-primary btn-sm">Save
+												changes</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+
+</html>
