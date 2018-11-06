@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import com.eledger.services.EledgerServices;
 import com.eledger.web.LoggingAccessDeniedHandler;
 
 @EnableWebSecurity
@@ -15,6 +16,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private LoggingAccessDeniedHandler accessDeniedHandler;
 
+    @Autowired
+    private  EledgerServices eledgerServices;
+     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -45,11 +49,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    	System.out.println("AuthenticationManagerBuilder");
-        auth.inMemoryAuthentication()
-                .withUser("user").password("password").roles("USER")
+    	System.out.println("AuthenticationManagerBuilder"+auth.toString());
+    	//eledgerServices.getUserDetail()user
+       /* auth.inMemoryAuthentication()
+                .withUser("user").password("password").roles("doctor")
             .and()
-                .withUser("manager").password("password").roles("MANAGER");
+                .withUser("manager").password("password").roles("patient");*/
     }
 
 }
